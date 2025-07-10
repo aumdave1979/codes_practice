@@ -64,7 +64,7 @@ void pattern7(){
         cout << " ";
         }
     // stars
-         for(int j = 0; j <     2 * i - 1; j++) {
+         for(int j = 0; j< 2*i-1; j++) {
         cout << '*';
         }
     //space
@@ -217,6 +217,10 @@ void pattern16(int n){
 
 void pattern17(int n){
     
+}
+
+void star_making_star(){
+
 }
 
 int main(){

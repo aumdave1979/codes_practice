@@ -110,7 +110,7 @@ void extras(){
     do{
         cout << s <<endl;
     }
-    while(next_permutation(s.begin(),s.end()));
+    while(next_permutation(s.begin(),s.end())); 
 
     
 }
@@ -139,5 +139,5 @@ void sorting_decending_myway(){
 
 int main(){
    sorting_decending_myway();
-    
+
 }
