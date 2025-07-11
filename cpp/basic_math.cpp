@@ -59,6 +59,16 @@ void armstrong(int a){
     }
 }
 
+void HCF(int a,int b){
+    while (b != 0) {
+        int temp = b;
+        b = a % b;
+        a = temp;
+    }
+    cout << a;
+}
+
+
 void check_division(int a){
     int count;
     for(int i=1;i<=a;i++){
@@ -71,5 +81,5 @@ void check_division(int a){
 }
 
  int main(){
-   check_division(9474);
+    HCF(20,24);
 }
