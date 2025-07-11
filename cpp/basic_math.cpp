@@ -11,7 +11,15 @@ int count_digit(int a){
     return count;
 }
 
-int reverse_num(int a){
+void reverse_num(int a){
+    int sign;
+    if(a<0){
+        sign= -1;
+    }
+    else{
+        sign =1;
+    }
+    a = abs(a);
     int rev_num=0;
     int ls_dgt;
     while(a>0){
@@ -19,8 +27,19 @@ int reverse_num(int a){
        a=a/10;
        rev_num = (rev_num*10)+ls_dgt;
     }
-    return rev_num;
+    cout << rev_num*sign;
+    // int reversed = 0;
+    // int sign = (num < 0) ? -1 : 1;
+    // num = abs(num);
+    // while (num > 0) {
+    //     int digit = num % 10;
+    //     reversed = reversed * 10 + digit;
+    //     num /= 10;
+    // }
+    // cout << reversed * sign;
 }
+
+
 
 void pallindrome(int a){
         int ls_digit;
@@ -60,12 +79,7 @@ void armstrong(int a){
 }
 
 void HCF(int a,int b){
-    while (b != 0) {
-        int temp = b;
-        b = a % b;
-        a = temp;
-    }
-    cout << a;
+     
 }
 
 
@@ -81,5 +95,5 @@ void check_division(int a){
 }
 
  int main(){
-    HCF(20,24);
+    reverse_num(-132);
 }
