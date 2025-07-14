@@ -39,8 +39,6 @@ void reverse_num(int a){
     // cout << reversed * sign;
 }
 
-
-
 void pallindrome(int a){
         int ls_digit;
         int revered_digit =0;
@@ -78,10 +76,19 @@ void armstrong(int a){
     }
 }
 
-void HCF(int a,int b){
-     
+int HCF(int a,int b){
+     if(a%b==0){
+        return b;
+     }
+     else return gcd(b,a%b);
 }
 
+int LCM_HCF(int a,int b){
+    int lcm = (a*b)/HCF(a,b);
+    cout << "LCM:" << lcm << endl;
+    cout << "HCF:" << HCF(a,b);
+    return 0;
+}
 
 void check_division(int a){
     int count;
@@ -95,5 +102,5 @@ void check_division(int a){
 }
 
  int main(){
-    reverse_num(-132);
+    cout << LCM_HCF(20,24);
 }

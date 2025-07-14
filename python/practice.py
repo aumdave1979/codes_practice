@@ -1,5 +1,6 @@
 # import hashlib
 # import pandas
+import numpy as num
 
 def operators():
     # floor division operator
@@ -20,8 +21,8 @@ def user_input():
     print("Enter value: ")
     i = input() # here input is taken in string data type we need to convert
     print(i)
-    o = int(input())
-    print(o)
+    o = int(input()) #here the input is taken in string but is then converted into int data type
+    print(o) 
 
 user_input()
                         
