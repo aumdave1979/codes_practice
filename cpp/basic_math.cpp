@@ -80,7 +80,7 @@ int HCF(int a,int b){
      if(a%b==0){
         return b;
      }
-     else return gcd(b,a%b);
+     else return HCF(b,a%b);
 }
 
 int LCM_HCF(int a,int b){
@@ -90,17 +90,39 @@ int LCM_HCF(int a,int b){
     return 0;
 }
 
-void check_division(int a){
-    int count;
-    for(int i=1;i<=a;i++){
-        if(a%i == 0){
-            count++;
+void check_division(int n){
+    vector<int> factors;
+    for(int i=1;i<=sqrt(n);i++){
+        if(n%i == 0){
+            factors.push_back(i);
+            if(n/i != i){
+                factors.push_back(n/i);
+            }
         }
     }
-    cout << count/2;
+    sort(factors.begin(),factors.end());
+    cout << "Factors: ";
+    for(auto it : factors){
+        cout <<it << " ";
+    }
+    
 
 }
 
+void prime(int n){
+    if(n<1){
+        cout << "Not prime";
+        return;
+    }
+    for(int i=2;i*i<=n;i++){
+        if(n%i==0){
+            cout << "not prime";
+            return;
+        }
+    }
+    cout <<"Is prime";
+}
+
  int main(){
-    cout << LCM_HCF(20,24);
+    cout << HCF(24,20);
 }
