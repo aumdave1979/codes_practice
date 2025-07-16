@@ -1,15 +1,21 @@
-#include<bits/stdc++.h>
+#include <iostream>
 using namespace std;
 
-int main(){
-    int a,last_digit;
-    int count =0;
-    cin >> a;
-    while(a>0){
-        last_digit = a%10;
-        a= a/10;
-        count++;
-    }
-    cout << count;
+int fibonacci(int n) {
+    if (n <= 1) return n;
 
+    int a = 0, b = 1, next;
+    for (int i = 2; i <= n; i++) {
+        next = a + b;
+        a = b;
+        b = next;
+    }
+    return b;
+}
+int main() {
+    int n;
+    cout << "Enter position: ";
+    cin >> n;
+    cout << "Fibonacci(" << n << ") = " << fibonacci(n) << endl;
+    return 0;
 }

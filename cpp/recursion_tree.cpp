@@ -44,11 +44,17 @@ void reverse_array(int arr[], int l, int r) {
     reverse_array(arr, l + 1, r - 1);
 }
 
-int main(){
-    int arr[] = {1,3,2,5,4};
-    reverse_array(arr,0,4);
+bool string_pallindrome(int i,string &s){
+     if(i>=s.length()/2){
+        return true;
+     }
+     if(s[i]!=s[s.length()-i-1]){
+        return false;
+     }
+     return string_pallindrome(i+1,s);
+}
 
-    for(int i=0;i<5;i++){
-        cout << arr[i] << endl;
-    }
+int main(){
+    string s= "rasar";
+    cout << string_pallindrome(0,s);
 }
