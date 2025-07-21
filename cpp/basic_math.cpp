@@ -83,11 +83,10 @@ int HCF(int a,int b){
      else return HCF(b,a%b);
 }
 
-int LCM_HCF(int a,int b){
+void LCM_HCF(int a,int b){
     int lcm = (a*b)/HCF(a,b);
     cout << "LCM:" << lcm << endl;
     cout << "HCF:" << HCF(a,b);
-    return 0;
 }
 
 void check_division(int n){
@@ -124,5 +123,5 @@ void prime(int n){
 }
 
  int main(){
-    cout << HCF(24,20);
+ LCM_HCF(24,20);
 }

@@ -482,5 +482,5 @@ void problem116(){
 }
 
 int main(){
-    problem115();
+    problem112(4);
 }
