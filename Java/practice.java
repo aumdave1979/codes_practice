@@ -3,6 +3,7 @@ class Node{
 
 public class practice {
     public static void main(String[] args) {
-         System.out.println();
+        long x=0;
+         System.out.println(x.sizeof());
     }
 }

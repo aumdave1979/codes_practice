@@ -58,4 +58,4 @@ bool string_pallindrome(int i,string &s){
 int main(){
     string s= "rasar";
     cout << string_pallindrome(0,s);
-}
+} 
