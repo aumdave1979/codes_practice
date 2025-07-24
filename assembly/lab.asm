@@ -1,0 +1,22 @@
+MVI C,41H
+MOV A,C
+(A)
+
+:b
+MVI H,34H
+MVI L,ABH
+
+:C
+MVI A,32H
+MOV B,A
+MOV C,A
+MOV D,A
+MOV E,A
+MOV H,A
+MOV L,A
+
+:d
+LDA C100H
+C100H
+
+
