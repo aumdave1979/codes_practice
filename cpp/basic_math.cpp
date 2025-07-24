@@ -123,5 +123,5 @@ void prime(int n){
 }
 
  int main(){
- LCM_HCF(24,20);
+ cout << HCF(20,24);
 }
