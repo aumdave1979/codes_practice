@@ -12,3 +12,13 @@ cursor.execute('''CREATE TABLE IF NOT EXISTS student_record (
                 Mark INTEGER NOT NULL)''')
 #commit changes
 conn.commit()
+
+#insert multiple student record
+student_record = {
+    (92400133058,'Aum Dave','PWP',95),
+    (92400133157,'Om dholariya','PWP',85),
+    (92400133113,'vishant chhaniyara',75)
+}
+#insert multiple record
+cursor.executemany('''INSERT INTO student_record (Enrollment, name, subject,Mark)
+VALUES (?, ?, ?,?)''', student_record)
