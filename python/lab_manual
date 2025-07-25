@@ -1,0 +1,45 @@
+def example1():
+    x = 5
+    y = -6
+    # Performing arithmetic operations
+    sum_result = x + y
+    difference_result = x - y
+    multiplication_result = x * y
+    division_result = x / y
+    # Printing the results
+    print("Sum:", sum_result)
+    print("Difference:", difference_result)
+    print("Multiplication:", multiplication_result)
+    print("Division:", division_result)
+
+def example2():
+    a = 10
+    b = 20
+    # Comparing the values
+    greater_than = a > b
+    less_than_or_equal = a <= b
+    equal_to = a == b
+    not_equal_to = a != b
+    # Printing the results
+    print("Greater than:", greater_than)
+    print("Less than or equal to:", less_than_or_equal)
+    print("Equal to:", equal_to)
+    print("Not equal to:", not_equal_to)
+
+def example3():
+    x = 3.14
+    y = 2.5
+    # Performing arithmetic operations
+    sum_result = x + y
+    difference_result = x - y
+    multiplication_result = x * y
+    division_result = x / y
+    # Printing the results
+    print("Sum:", sum_result)
+    print("Difference:", difference_result)
+    print("Multiplication:", multiplication_result)
+    print("Division:", division_result)
+
+# Only call example2
+example3()
+
