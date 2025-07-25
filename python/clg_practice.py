@@ -49,3 +49,13 @@ high_marks = cursor.fetchall()
 print("\nStudents with Marks greater than 90:")
 for student in high_marks:
     print(student)
+
+# Update MArk for Ashutosh kumar (PWP)
+cursor.execute('''UPDATE student_record SET Mark = 98
+            WHERE name = 'Om Dholariya' AND subject = 'PWP' ''')
+conn.commit()
+
+# Verify the update
+cursor.execute('SELECT name, MArk FROM student_record WHERE name = "ASHUTOSH KUMAR SINGH"')
+updated_mark = cursor.fetchone()
+print(f"\nUpdated Mark for {updated_mark[0]}: {updated_mark[1]}")
