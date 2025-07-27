@@ -150,7 +150,25 @@ void decimal_to_binary(int n){
     }
 }
 
+void decimal_to_hexadecimal(int n) {
+    int remainder;
+    vector<int> remainders;
+    while (n > 0) {
+        remainder = n % 16;
+        remainders.push_back(remainder);
+        n = n / 16;
+    }
+    char hex_chars[] = {'0', '1', '2', '3', '4', '5', '6', '7',
+                        '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
+    for (int i = remainders.size() - 1; i >= 0; i--) {
+        cout << hex_chars[remainders[i]];
+    }
+}
+
+void hex_to_decimal(int n){
+    
+}
 
  int main(){
-    decimal_to_binary(6);
+    decimal_to_hexadecimal(999);
 }
