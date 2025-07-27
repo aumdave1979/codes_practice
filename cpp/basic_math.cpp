@@ -122,6 +122,27 @@ void prime(int n){
     cout <<"Is prime";
 }
 
+void binary_to_decimal(int n) {
+    vector<int> digits;
+    while(n > 0) {
+        int ls_digit = n % 10;
+        digits.push_back(ls_digit);
+        n = n / 10;
+    }
+    int decimal_number = 0;
+    for(int i = 0; i < digits.size(); i++) {
+        decimal_number += digits[i] * pow(2, i);
+    }
+
+    cout << decimal_number << endl;
+}
+
+pair<int,int> test(){
+    vector<int> nums = {1,2,3,4,};
+    return {nums[0],nums[1]};
+}
+
+
  int main(){
- cout << HCF(20,24);
+ cout <<    test();
 }
