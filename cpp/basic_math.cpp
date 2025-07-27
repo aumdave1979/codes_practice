@@ -137,12 +137,20 @@ void binary_to_decimal(int n) {
     cout << decimal_number << endl;
 }
 
-pair<int,int> test(){
-    vector<int> nums = {1,2,3,4,};
-    return {nums[0],nums[1]};
+void decimal_to_binary(int n){
+    int remainder;
+    vector<int> remainders;
+    while(n>0){
+        remainder = n%2;
+        remainders.push_back(remainder);
+        n=n/2;
+    }
+    for(int i=remainders.size()-1;i>=0;i--){
+        cout << remainders[i];
+    }
 }
 
 
  int main(){
- cout <<    test();
+    decimal_to_binary(6);
 }
