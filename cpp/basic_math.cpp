@@ -169,6 +169,38 @@ void hex_to_decimal(int n){
     
 }
 
+void one_compliment(int num){
+    vector<int> rem;
+    int remainder;
+    //for converting to binary
+    while(num>0){
+        remainder = num%2;
+        rem.push_back(remainder);
+        num = num/2;
+    }
+    // for inverting the bits
+    for(int i = rem.size()-1;i>=0;i--){
+        if(rem[i]==1){
+            rem[i]=0;
+        }
+        else{
+            rem[i]=1;
+        }
+    }
+    // for printing the inverted bits
+    // for(int i=rem.size()-1;i>=0;i--){
+    //     cout << rem[i];
+    // }
+    //for binary to decimal
+    int decimal_num =  0;
+    for(int j=rem.size()-1;j>=0;j--){
+        decimal_num += rem[j]* pow(2,j);
+    }
+    cout << decimal_num;
+
+}
+
+
  int main(){
-    decimal_to_hexadecimal(999);
+    one_compliment(5);
 }
