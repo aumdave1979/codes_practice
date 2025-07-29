@@ -200,6 +200,18 @@ void one_compliment(int num){
 
 }
 
+void binary_string_add(string& s1, string& s2){
+    int carry =0;
+    int sum;
+    vector<string> answer;
+    for(int i=s1.length()-1;i>=0;i--){
+        for(int j=s2.length()-1;j>=0;j--){
+            if(carry == 1){
+                sum = s1[i]+s1[j]
+            }
+        }
+    }
+}
 
  int main(){
     one_compliment(5);
