@@ -1,9 +1,7 @@
-class Node{
-}
-
+import java.util.Scanner;
 public class practice {
     public static void main(String[] args) {
-        long x=0;
-         System.out.println(x);
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextLine()
     }
 }

@@ -207,7 +207,7 @@ void binary_string_add(string& s1, string& s2){
     for(int i=s1.length()-1;i>=0;i--){
         for(int j=s2.length()-1;j>=0;j--){
             if(carry == 1){
-                sum = s1[i]+s1[j]
+                sum = s1[i]+s1[j]+carry;
             }
         }
     }
