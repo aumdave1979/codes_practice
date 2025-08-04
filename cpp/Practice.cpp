@@ -3,10 +3,19 @@ using namespace std;
 
 int main()
 {
-    vector<int> jik = {1,2,3};
-    int a ;
-    for(int i=jik.size()-1;i>=0;i--){
-        a += pow(10,i) + jik[i];
+    vector<int> digit = {1, 5, 6, 7, 4, 6};
+
+    int small = digit[0];
+    int big = digit[0];
+    for (int i = 1; i < digit.size(); i++) {
+        if (digit[i] < small) {
+            small = digit[i];
+        }
+        if (digit[i] > big) {
+            big = digit[i];
+        }
     }
-    cout << a;
+    cout << big << endl;
+    cout << small << endl;
+    return 0;
 }
