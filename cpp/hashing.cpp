@@ -1,7 +1,18 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int main() {
+void character_hashing(){
+     string s= "aumkrisharashipriyanshvyomprasham";
+    char ch='a';
+    int hash[26]={0};
+    for(int i=0;i<s.size();i++){
+        hash[s[i]-'a']++;
+    }
+    cout << hash[ch-'a'];
+
+}
+
+void number_hashing(){
     int n;
     cout << "Enter size of array: ";
     cin >> n;
@@ -35,7 +46,9 @@ int main() {
         else
             cout << "Out of range\n";
     }
+}
 
-    return 0;
+int main() {
+    
 }
  
