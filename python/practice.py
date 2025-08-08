@@ -1,6 +1,6 @@
 # import hashlib
 # import pandas
-import numpy as num
+# import numpy as num
 
 def operators():
     # floor division operator
