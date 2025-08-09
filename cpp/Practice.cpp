@@ -3,19 +3,11 @@ using namespace std;
 
 int main()
 {
-    vector<int> digit = {1, 5, 6, 7, 4, 6};
-
-    int small = digit[0];
-    int big = digit[0];
-    for (int i = 1; i < digit.size(); i++) {
-        if (digit[i] < small) {
-            small = digit[i];
-        }
-        if (digit[i] > big) {
-            big = digit[i];
-        }
+    vector<int> s = {2,2,1,1,3};
+    int unique = 0;
+    for(int i=0;i<s.size();i++){
+        unique ^= s[i];
     }
-    cout << big << endl;
-    cout << small << endl;
-    return 0;
+    cout << unique;
+    
 }
