@@ -29,7 +29,6 @@ int main(){
     c.a='q';
     c.next=NULL;
     c.prev=&B;
-    
     A.prev=NULL;
 
     First_Link.Curr=&c;
