@@ -213,6 +213,18 @@ void binary_string_add(string& s1, string& s2){
     }
 }
 
+void factorial(){
+    int factorial =1;
+    int n;
+    cin >> n;
+    while(n>0){
+        factorial*=n;
+        n--;
+    }
+    cout << factorial;
+}
+
+
  int main(){
-    one_compliment(5);
+    factorial();
 }
