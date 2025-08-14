@@ -224,6 +224,10 @@ void factorial(){
     cout << factorial;
 }
 
+void third_greatest(){
+    vector<int> arrr = {2,2,3,1};
+    
+}
 
  int main(){
     factorial();
