@@ -7,7 +7,7 @@ void mapping(){
     for(int i=0;i<6;i++){
         mpp[arr[i]]++;
     }
-    cout <<mpp[11];
+    
 }
 
 int main(){

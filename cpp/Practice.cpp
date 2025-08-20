@@ -1,12 +1,15 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int main()
-{
-    vector<int> s = {7,1,5,3,6,4};
-    sort(s.begin(),s.end(),greater());
-    s.erase(unique(s.begin(),s.end()),s.end());
-    cout << s[2]<<endl;
-    cout << s.size();
+int main(){
+    string s ="Aum";
+    vector<char> y;
+    for(int i=0;i<s.size();i++){
+        y.push_back(s[i]);
+    }
+    for(auto it:y){
+        cout << it << endl;
+    }
+    sort(s.begin(),s.end());
+    cout << s;
 }
-p
