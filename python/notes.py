@@ -53,12 +53,15 @@ def string_method():
     print("ENDS WITH FUNTION - ",name.endswith("ple")) # checks weather the string is ending with the particular 
     print("ISALNUM FUNCTION - ",name.isalnum()) # return true only when the whole string consists of A-Z , a-z or 0-9
     print("ISALPHA FUNCTION - ",name.isalpha()) # gives out true only whrn the whole string consist of A-Z , a-z
-
-
+    print("IS LOWER FUNCTION - ",name.islower()) #bool function gives out true when all are lower case alpha
+    print("IS UPPER FUNCTION - ",name.isupper()) #bool function give out true ahen all are upper case letters
+    print("IS SPACE FUNCTION - ", name.isspace()) # boolfunction gives out true when contains white space in it;
+    print("IS TITLE FUNCTION - ",blog.istitle()) # returns that if all the words of the string first letter capital or not
+    print("TITLE FUNCTION - ",blog.title()) # makes the each first letter of a word capital in string
 
 def StringMethod2():
 #find function
-    # s1 = "Hello krisha krisha"
+    s1 = "Hello krisha krisha"
     # print(s1.find("krisha")) # give the index number of the first occurrence of in the whole string
     # print(s1.find("aum")) #returns -1 because no such word is present in whole string
 
@@ -72,6 +75,4 @@ def StringMethod2():
     print(s1.index("aum")) #returns -1 because no such word is present in whole string
 
 
-
-
-StringMethod2()
+string_method()
