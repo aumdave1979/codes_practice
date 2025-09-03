@@ -39,7 +39,7 @@ def cal_for(x):
     return y
 
 
-import lec4 as formula
+# import lec4 as formula
 x=int(input("Enter the x valur: "))
 
 result = formula.cal_for(x)

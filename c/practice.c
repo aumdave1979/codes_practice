@@ -1,12 +1,10 @@
 #include <stdio.h>
 
 int main() {
-    float sum = 0.0;
-
-    for (float i = 1; i <= 9; i++) {
-        sum += i / (i + 1);
+   for(int i=0;i<5;i++){
+    for(int j=0;j<=i;j++){
+        printf("*");
     }
-    printf("Sum = %f", sum);
-
-    return 0;
+    printf("\n");
+}
 }

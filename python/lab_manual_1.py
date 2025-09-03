@@ -100,15 +100,15 @@ def example8():
     st2 = "Department"
     st3 = "3EK1"    
     print(st1+st2+st3)
-    print(4*st1)
+   
 
-def exampple9():
+def example9():
     st1 ="Aum"
-     
+    print(4*st1)
 
 def example10():
     st1 = "ICT Department 3EK1"
-    print("p" in st1)
+    # print("p" in st1)
     print("f" not in st1)
 
 def example11():
@@ -124,6 +124,45 @@ def example12():
     list2 = ["grapes"]
     print(list1+ list2)
 
-# Only call example2
-example10()
+def example13():
+    dict={"comp": "computer" , "sci" : "science"}
+    print(dict["comp"])
+    dict2={"123":"computer",456 : "maths"}
+    print(dict2["123"])
+    print(dict["comp"]+ dict2["123"])
 
+    print(dict+ dict2)
+    print(dict["computer"]+ dict2["computer"])
+
+def example14():
+    my_set = {1, 2, 3, 4, 5}
+    print(my_set)
+    set1 = {1, 2, 3, 4, 5}
+    set2 = {4, 5, 6, 7, 8}
+    print(set1+set2)
+
+def example15():
+    my_tuple = (1, 2, 3, 4, 5)
+    t1 = (2,3,4)
+    t2 = (5,6,7)
+    print(t1+t2)
+
+
+def example16():
+    print("Welcome to Python \n"*5)
+
+
+def postlab_2():
+    print("Number\tSquare\tCube \n")
+
+    for i in range(1, 5):
+        print(f"{i}\t{i**2}\t{i**3}")
+
+
+def postlab_3():
+    result = (9.5 * 4.5 - 2.5 * 3) / (45.5 - 3.5)
+    print("The result is:", result)
+
+
+
+postlab_3()
