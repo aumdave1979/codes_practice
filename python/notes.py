@@ -74,5 +74,63 @@ def StringMethod2():
     print(s1.index("krisha")) # give the index number of the first occurrence of in the whole string
     print(s1.index("aum")) #returns -1 because no such word is present in whole string
 
+def match_case():
+    x =4
+    match x:
+        case 0:
+            print("X is 0")
+        case 4:
+            print("X is 4")
+        case _:
+            print("X is > 10")
 
-string_method()
+def loops():
+    def for_loop():
+         #in string
+        # s = "My name is Aum"
+        # for i in s:
+        #     print(i)
+    
+         #in list
+        # colors = ["Red","Green","Blue","yellow"]
+        # for color in colors:  // this for loop reads each element
+        #     print(color)
+        #     for ch in color:   // and this for loop reach each letter or each element
+        #         print(ch)
+
+         # range function  
+        # for k in range(5): //this range function is without parameter and will print from 0 to 5 but not 5
+        #     print(k) 
+         
+         #range functionn with parameters
+        # for k in range(1,9)  // parameters are start from 1 and go till 9 but not 9
+        #     print(k)
+
+         # range function with step parameter 
+        # for k in range(1,12,3): //will add 3 after printing each element
+        #     print(k)
+        print("for loop over")
+    
+    def while_loop():
+        i=0
+        while(i<5):
+            print(i)
+            i+=1
+    while_loop()
+
+def list_note():
+    # thid is called a list
+    l = [1,3,5,7]
+    # print(l[-1]) // this is called negative indexing will give out the last element of the list
+
+    # if 6 in l: # special keyword in python by which can find out whether element is present or not
+    #     print(True)
+    # else:
+    #     print(False)
+
+
+    print(l[:]) #will print all the elemetns
+    print(l[1:5]) 
+
+list_note()
+  

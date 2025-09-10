@@ -43,12 +43,17 @@ void insertion_sort(vector<int> arrr){
     }
 } 
 
-// void merge(vector<int> arrr,low,mid,high){
+void quick_sort(vector<int> arrr){
 
-// }
-// void merge_sort(vector<int> arrr,low,high){
+}
+
+ void merge(vector<int> arrr){
+
+ }
+
+ void merge_sort(vector<int> arrr){
     
-// }
+}
 
 int main(){
     vector<int> arr = {13,46,24,52,20,9};
