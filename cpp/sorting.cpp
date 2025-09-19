@@ -47,11 +47,11 @@ void quick_sort(vector<int> arrr){
 
 }
 
- void merge(vector<int> arrr){
+void merge(vector<int> arrr){
 
  }
 
- void merge_sort(vector<int> arrr){
+void merge_sort(vector<int> arrr){
     
 }
 
