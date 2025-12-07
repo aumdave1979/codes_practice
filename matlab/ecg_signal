@@ -1,0 +1,142 @@
+%% realtime_ecg_demo.m
+clear; close all; clc
+
+%% --------- User settings ----------
+mode = "synthetic";    % options: "synthetic" or "file"
+fs = 360;              % sampling rate for synthetic mode
+duration = 15;         % seconds of data
+chunk_ms = 100;        % chunk duration in milliseconds
+window_sec = 6;        % plot window width
+show_deadline_flag = true;
+%% ----------------------------------
+
+if strcmp(mode,"file")
+    if exist('ecg.mat','file')~=2
+        error('Missing ecg.mat (must contain variables ecg, fs)');
+    end
+    data = load('ecg.mat');
+    x = data.ecg(:);
+    fs = data.fs;
+    total_samples = length(x);
+    duration = total_samples/fs;
+else
+    %% >>> Synthetic ECG generator (Corrected) <<<
+    total_samples = fs * duration;
+    t = (0:total_samples-1)'/fs;
+
+    x = 0.01*randn(total_samples,1);  % noise
+
+    hr_mean = 70/60;                 % beats per second
+    rr_interval = 1/hr_mean;
+    beat_times = 0:rr_interval:duration;
+
+    for bt = beat_times
+        idx = round(bt*fs)+1;
+        if idx <= total_samples
+
+            %% R-PEAK ----------------------------------------------------
+            w = round(0.06*fs);
+            gidx = max(1,idx-w):min(total_samples,idx+w);
+            gauss = exp(-((gidx - idx)/(0.02*fs)).^2);
+            x(gidx) = x(gidx) + 1.0 * gauss(:);
+
+            %% P-WAVE ----------------------------------------------------
+            pidx = idx - round(0.18*fs);
+            if pidx > 0
+                pidxs = max(1,pidx-round(0.05*fs)):min(total_samples,pidx+round(0.05*fs));
+                p_gauss = exp(-((pidxs - pidx)/(0.03*fs)).^2);
+                x(pidxs) = x(pidxs) + 0.08 * p_gauss(:);
+            end
+
+            %% T-WAVE ----------------------------------------------------
+            tidx = idx + round(0.22*fs);
+            if tidx <= total_samples
+                tidxs = max(1,tidx-round(0.08*fs)):min(total_samples,tidx+round(0.08*fs));
+                t_gauss = exp(-((tidxs - tidx)/(0.04*fs)).^2);
+                x(tidxs) = x(tidxs) + 0.18 * t_gauss(:);
+            end
+        end
+    end
+
+    %% baseline wander
+    x = x + 0.15*sin(2*pi*0.33*t) + 0.03*sin(2*pi*0.07*t);
+end
+
+%% Streaming parameters
+chunk_samples = round(chunk_ms * fs / 1000);
+n_chunks = ceil(length(x) / chunk_samples);
+window_samples = round(window_sec * fs);
+
+%% Setup figure
+fig = figure('Name','Real-time ECG Demo','NumberTitle','off');
+ax = axes(fig);
+hold(ax,'on');
+
+h = plot(ax, nan(1,window_samples), nan(1,window_samples));
+
+xlabel('Time (s)');
+ylabel('Amplitude');
+xlim([0,window_sec]);
+
+ylim([min(x)-0.5, max(x)+0.5]);
+
+%% Buffers
+proc_times = zeros(n_chunks,1);
+deadlines = chunk_samples/fs;
+start_sample = 1;
+global_time = 0;
+
+for k = 1:n_chunks
+
+    s = start_sample;
+    e = min(start_sample + chunk_samples - 1, length(x));
+    chunk = x(s:e);
+    ns = length(chunk);
+    t_chunk = (0:ns-1)'/fs + global_time;
+
+    tic
+
+    % simple baseline remove
+    chunk_processed = chunk - movmean(chunk, round(0.2*fs));
+
+    proc_time = toc;
+    proc_times(k) = proc_time;
+
+    % --- buffer update ---
+    if k == 1
+        buffer_signal = chunk_processed;
+        buffer_time = t_chunk;
+    else
+        buffer_signal = [buffer_signal; chunk_processed];
+        buffer_time = [buffer_time; t_chunk];
+
+        % keep only last window
+        if length(buffer_signal) > window_samples
+            keep = length(buffer_signal) - window_samples + 1;
+            buffer_signal = buffer_signal(keep:end);
+            buffer_time = buffer_time(keep:end);
+        end
+    end
+
+    newest_time = buffer_time(end);
+    xdata = buffer_time - newest_time + window_sec;
+    set(h,'XData',xdata,'YData',buffer_signal);
+
+    drawnow limitrate
+
+    % simulate acquisition interval
+    pause_time = deadlines - proc_time;
+    if pause_time > 0
+        pause(pause_time);
+    end
+
+    global_time = global_time + ns/fs;
+    start_sample = e + 1;
+
+end
+
+%% Summary
+fprintf("\n--- Real-time summary ---\n");
+fprintf("Total chunks: %d\n", n_chunks);
+fprintf("Avg processing time: %.4f s\n", mean(proc_times));
+fprintf("Chunk duration: %.4f s\n", deadlines);
