@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-void selection_sort(vector<int> arrr){
+void selection_sort(vector<int> arrr){  
     for(int i=0;i<arrr.size();i++){
         int min = i;
         for(int j=i;j<arrr.size();j++){
@@ -30,18 +30,18 @@ void bubble_sort(vector<int> arrr){
 
 }
 
-void insertion_sort(vector<int> arrr){
-    for(int i=0;i<arrr.size();i++){
-        int j=i;
-        while(j>0 && arrr[j-1]>arrr[j]){
-            swap(arrr[j],arrr[j-1]);
-            j--;
+    void insertion_sort(vector<int> arrr){
+        for(int i=0;i<arrr.size();i++){
+            int j=i;
+            while(j>0 && arrr[j-1]>arrr[j]){
+                swap(arrr[j],arrr[j-1]);
+                j--;
+            }
         }
-    }
-    for(auto it: arrr){
-        cout << it << endl;
-    }
-} 
+        for(auto it: arrr){
+            cout << it << endl;
+        }
+    } 
 
 void quick_sort(vector<int> arrr){
 
@@ -52,6 +52,10 @@ void merge(vector<int> arrr){
  }
 
 void merge_sort(vector<int> arrr){
+    
+}
+
+void bucket_sort(vector<int> arrr){
     
 }
 

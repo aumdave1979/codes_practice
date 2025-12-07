@@ -12,7 +12,7 @@ void selection_sort(int a[], int size)
                 mIndex = i;
             }
         }
-        swap(a[pass], a[mIndex]);
+            swap(a[pass], a[mIndex]);
     }
 }
 void printArray(int a[], int size)
