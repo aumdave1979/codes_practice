@@ -14,7 +14,6 @@
         vector<double> Efficiency;
         for (int i = 0; i < No_trip; i++) {
             double Distance, galoon_fuel;
-
             do {
                 cout << "Enter Distance Travelled: ";
                 cin >> Distance;

@@ -17,7 +17,7 @@ def typecasting():
     print(type(a))
     print(type(a1))
 
-def user_input():
+def user_inputs():
     print("Enter value: ")
     i = input() # here input is taken in string data type we need to convert
     print(i)
@@ -34,6 +34,7 @@ def slicing():
     print(name[0:5]) #in this the print function will only print from 1 upto 4th index the and will not prnt the 5th index element
     #negative slicing
     print(name[0:-1]) #means it will take as len(name)-1 means 10-1 so 9 so it will print "Aum,dimpl"
+    print(name[-9:5])
 
 def string_method():
     name = "Dimple"
@@ -45,7 +46,7 @@ def string_method():
     print("LOWER CASE FUNCTION - ", name.lower()) #print all letter in lower case
     print(name)  # this shows that it will not change the orignal 
     print("rstrip 'will remove all !' - ",name.rstrip("!")) #removes all the element of !
-    print("REPLACE FUNCTION - ",replace.replace("Aum","Dimple")) #replaces all the element of Aum with Rashi
+    print("REPLACE FUNCTION - ",replace.replace("Aum","Dimple")) #replaces all the element of Aum with dimple
     print("SPLIT FUNCTION - ",replace.split(" ")) # split string into list where after 1 space it is other element
     print("CAPITALIZE FUNCTION - ",blog.capitalize()) #gives capital letter after any punctuation or starting of a statement
     print("CENTER FUNCTION - ",name.center(50)) #moves the    name string towards center
@@ -53,7 +54,7 @@ def string_method():
     print("ENDS WITH FUNTION - ",name.endswith("ple")) # checks weather the string is ending with the particular 
     print("ISALNUM FUNCTION - ",name.isalnum()) # return true only when the whole string consists of A-Z , a-z or 0-9
     print("ISALPHA FUNCTION - ",name.isalpha()) # gives out true only whrn the whole string consist of A-Z , a-z
-    print("IS LOWER FUNCTION - ",name.islower()) #bool function gives out true when all are lower case alpha
+    print("IS LOWER FUNCTION - ",name.islower()) #bool function gives out true when all are low er case alpha
     print("IS UPPER FUNCTION - ",name.isupper()) #bool function give out true ahen all are upper case letters
     print("IS SPACE FUNCTION - ", name.isspace()) # boolfunction gives out true when contains white space in it;
     print("IS TITLE FUNCTION - ",blog.istitle()) # returns that if all the words of the string first letter capital or not

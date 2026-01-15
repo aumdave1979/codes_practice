@@ -284,5 +284,4 @@ int single_nums(vector<int> &nums){
 int main()
 {
     vector<int> nums = {1, 1, 1, 0, 0, 1, 1, 0};
-   cout << max_consi_one(nums);
 }

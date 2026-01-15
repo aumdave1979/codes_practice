@@ -1,61 +1,68 @@
-import sqlite3
+# import sqlite3
 
-# Creating the database (it will create 'Ek1_batch.db' if not exists)
-conn = sqlite3.connect('Ek1_batch.db')
+# # Creating the database (it will create 'Ek1_batch.db' if not exists)
+# conn = sqlite3.connect('Ek1_batch.db')
 
-# Creating a cursor object 
-cursor = conn.cursor()
+# # Creating a cursor object 
+# cursor = conn.cursor()
 
-# Creating student table
-cursor.execute('''CREATE TABLE IF NOT EXISTS student_record (
-                Enrollment INTEGER PRIMARY KEY,
-                name TEXT NOT NULL,
-                Subject TEXT NOT NULL,
-                Mark INTEGER NOT NULL)''')
+# # Creating student table
+# cursor.execute('''CREATE TABLE IF NOT EXISTS student_record (
+#                 Enrollment INTEGER PRIMARY KEY,
+#                 name TEXT NOT NULL,
+#                 Subject TEXT NOT NULL,
+#                 Mark INTEGER NOT NULL)''')
 
-# Commit changes
-conn.commit()
+# # Commit changes
+# conn.commit()
 
-# Insert multiple student records
-student_record = [
-    (92400133058, 'Aum Dave', 'PWP', 95),
-    (92400133157, 'Om Dholariya', 'PWP', 85),
-    (92400133113, 'Vishant Chhaniyara', 'PWP', 75)
-]
+# # Insert multiple student records
+# student_record = [
+#     (92400133058, 'Aum Dave', 'PWP', 95),
+#     (92400133157, 'Om Dholariya', 'PWP', 85),
+#     (92400133113, 'Vishant Chhaniyara', 'PWP', 75)
+# ]
 
-# Insert multiple records using executemany
-cursor.executemany('''
-    INSERT OR IGNORE INTO student_record (Enrollment, name, Subject, Mark)
-    VALUES (?, ?, ?, ?)''', student_record)
+# # Insert multiple records using executemany
+# cursor.executemany('''
+#     INSERT OR IGNORE INTO student_record (Enrollment, name, Subject, Mark)
+#     VALUES (?, ?, ?, ?)''', student_record)
 
-# Commit changes
-conn.commit()
+# # Commit changes
+# conn.commit()
 
-# Fetch all student records
-cursor.execute('SELECT * FROM student_record')
-rows = cursor.fetchall()
+# # Fetch all student records
+# cursor.execute('SELECT * FROM student_record')
+# rows = cursor.fetchall()
 
-# Display the results
-print("All Student Records:")
-for row in rows:
-    print(row)
+# # Display the results
+# print("All Student Records:")
+# for row in rows:
+#     print(row)
 
-# Close the connection
+# # Close the connection
 
-# Fetch student got more than 90
-cursor.execute('SELECT name, subject, Mark FROM student_record WHERE Mark > 90')
-high_marks = cursor.fetchall()
+# # Fetch student got more than 90
+# cursor.execute('SELECT name, subject, Mark FROM student_record WHERE Mark > 90')
+# high_marks = cursor.fetchall()
 
-print("\nStudents with Marks greater than 90:")
-for student in high_marks:
-    print(student)
+# print("\nStudents with Marks greater than 90:")
+# for student in high_marks:
+#     print(student)
 
-# Update MArk for Ashutosh kumar (PWP)
-cursor.execute('''UPDATE student_record SET Mark = 98
-            WHERE name = 'Om Dholariya' AND subject = 'PWP' ''')
-conn.commit()
+# # Update MArk for Ashutosh kumar (PWP)
+# cursor.execute('''UPDATE student_record SET Mark = 98
+#             WHERE name = 'Om Dholariya' AND subject = 'PWP' ''')
+# conn.commit()
 
-# Verify the update
-cursor.execute('SELECT name, MArk FROM student_record WHERE name = "ASHUTOSH KUMAR SINGH"')
-updated_mark = cursor.fetchone()
-print(f"\nUpdated Mark for {updated_mark[0]}: {updated_mark[1]}")
+# # Verify the update
+# cursor.execute('SELECT name, MArk FROM student_record WHERE name = "ASHUTOSH KUMAR SINGH"')
+# updated_mark = cursor.fetchone()
+# print(f"\nUpdated Mark for {updated_mark[0]}: {updated_mark[1]}")
+
+#plot sinosuidal signal using python clg work
+import numpy as np
+import matplotlib.pyplot as plt
+
+t= np.linspace(0,10,1000)
+

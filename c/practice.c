@@ -1,10 +1,7 @@
-#include <stdio.h>
+#include<stdio.h>
 
-int main() {
-   for(int i=0;i<5;i++){
-    for(int j=0;j<=i;j++){
-        printf("*");
-    }
-    printf("\n");
-}
+int main(){
+    int a = 5;
+    int b = &a;
+    printf("%d",b);
 }
