@@ -5,8 +5,6 @@ public class Practice1{
         Scanner sc = new Scanner(System.in);
         System.out.println("etner number:");
         int x = sc.nextInt();
-        System.out.printf("The number was %d",x);
-
-
+        System.out.printf("The number was %d\n",x);
     }
 }

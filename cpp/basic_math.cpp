@@ -216,12 +216,13 @@ void binary_string_add(string& s1, string& s2){
 void factorial(){
     int factorial =1;
     int n;
+    cout << "Enter the number n: ";
     cin >> n;
     while(n>0){
         factorial*=n;
         n--;
     }
-    cout << factorial;
+    cout << factorial<<endl;
 }
 
 void third_greatest(){

@@ -2,6 +2,6 @@ import java.util.Scanner;
 public class practice {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int n = sc.nextLine()
+        int n = sc.nextInt();
     }
 }
